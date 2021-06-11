@@ -1,6 +1,6 @@
 import React from "react";
 
-function Table(props) {
+function Table({search, results, error}) {
 
  return (
       <div>
@@ -16,7 +16,7 @@ function Table(props) {
             </tr>
           </thead>
           <tbody>
-            {props.state.results.map((employee) => {
+            {results.map((employee) => {
               return (
                 <tr>
                   <td>
