@@ -1,37 +1,33 @@
-import React, { Component } from "react";
-import API from '../../utils/API'
+import React from "react";
 
+function Table(props) {
 
-export default class Table extends Component {
-
-  componentDidMount() {
-    API.getEmployeeList()
-      .then((res) => {
-        this.setState({
-          results: res.results
-        })
-      }).catch((err) => {
-        this.setState({error: err})
-      })
-  };
-
-  
-
-  
-
-  render() {
-    return (
+ return (
       <div>
         <table className="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">Picture</th>
               <th scope="col">First</th>
               <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">City</th>
             </tr>
           </thead>
           <tbody>
+            {props.state.results.map((employee) => {
+              return (
+                <tr>
+                  <td>
+                    <img>
+                      src={employee.picture.thumbnail}
+                      alt={employee.name.last}
+                    </img>
+                  </td>
+                </tr>
+              )
+            })}
             <tr>
               <th scope="row">1</th>
               <td>Mark</td>
@@ -54,5 +50,7 @@ export default class Table extends Component {
         </table>
       </div>
     );
-  }
-}
+  
+};
+
+export default Table;

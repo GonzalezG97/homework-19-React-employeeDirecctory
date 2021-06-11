@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Table from '../Table/Table'
+import API from '../../utils/API';
 
 class Container extends Component {
     state = {
@@ -17,4 +19,14 @@ class Container extends Component {
             this.setState({error: err})
           })
       };
+
+      render() {
+          return (
+              <Table
+                state={this.state}
+              />
+          )
+      }
 }
+
+export default Container;
