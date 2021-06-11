@@ -3,17 +3,15 @@ import API from '../../utils/API'
 
 
 export default class Table extends Component {
-  state = {
-    search: "",
-    results: []
-  };
 
   componentDidMount() {
     API.getEmployeeList()
-      .then((response) => {
+      .then((res) => {
         this.setState({
-          results: response.results
+          results: res.results
         })
+      }).catch((err) => {
+        this.setState({error: err})
       })
   };
 
