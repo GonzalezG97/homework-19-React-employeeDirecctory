@@ -1,6 +1,26 @@
 import React, { Component } from "react";
+import API from '../../utils/API'
+
 
 export default class Table extends Component {
+  state = {
+    search: "",
+    results: []
+  };
+
+  componentDidMount() {
+    API.getEmployeeList()
+      .then((response) => {
+        this.setState({
+          results: response.results
+        })
+      })
+  };
+
+  
+
+  
+
   render() {
     return (
       <div>
@@ -27,9 +47,10 @@ export default class Table extends Component {
               <td>@fat</td>
             </tr>
             <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
+            <th scope="row">2</th>
+              <td>Bruce</td>
+              <td>Wayne</td>
+              <td>@Batman</td>
             </tr>
           </tbody>
         </table>

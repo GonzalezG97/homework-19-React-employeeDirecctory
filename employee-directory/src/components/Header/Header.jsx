@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Api from '../../utils/api'
+
 
 export default class Header extends Component {
     render() {
