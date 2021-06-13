@@ -1,6 +1,7 @@
 {
   "name": "employee-directory",
   "version": "0.1.0",
+  "homepage": "https://gonzalezg97.github.io/homework-wk19-React-employeeDirecctory/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.13.0",
@@ -8,6 +9,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.1",
+    "gh-pages": "^3.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
