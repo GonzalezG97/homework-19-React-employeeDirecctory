@@ -1,6 +1,7 @@
 import React from "react";
 
-function Table({search, results, error}) {
+
+function Table(props) {
 
  return (
       <div>
@@ -16,36 +17,21 @@ function Table({search, results, error}) {
             </tr>
           </thead>
           <tbody>
-            {results.map((employee) => {
-              return (
-                <tr>
-                  <td>
-                    <img>
-                      src={employee.picture.thumbnail}
-                      alt={employee.name.last}
-                    </img>
-                  </td>
-                </tr>
-              )
-            })}
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-            <th scope="row">2</th>
-              <td>Bruce</td>
-              <td>Wayne</td>
-              <td>@Batman</td>
-            </tr>
+          {props.users[0]!== undefined && props.users[0].name!== undefined ?
+            (props.users.map(({name, email, city, phone, picture}) => {
+                return (<tr>
+                    <td>{name.first} {name.last}</td>
+                    <td>{email}</td>
+                    <td>{city}</td>
+                    <td>{phone}</td>
+                    <img src={picture.thumbnail}/>
+                </tr>)
+                    }
+                ))
+                : (
+                    <></>
+                )
+            }
           </tbody>
         </table>
       </div>

@@ -12,8 +12,9 @@ class Container extends Component {
       componentDidMount() {
         API.getEmployeeList()
           .then((res) => {
+            console.log(res.data.results)
             this.setState({
-              results: res.results
+              results: res.data.results
             })
           }).catch((err) => {
             this.setState({error: err})
@@ -23,7 +24,7 @@ class Container extends Component {
       render() {
           return (
               <Table
-                state={this.state}
+                users={this.state.results}
               />
           )
       }
